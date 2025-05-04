@@ -1,20 +1,29 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
-  import CurrencyTable from './components/CurrencyTable.vue';
+	import CurrencyTable from './components/CurrencyTable.vue';
 </script>
-
 <template>
-  <header>
-    <h1>Header</h1>
-  </header>
-  <hr>
-  <main>
-    <h1>Main</h1>
-    <CurrencyTable></CurrencyTable>
-  </main>
+	<div class="container">
+		<div class="section">
+			<CurrencyTable>
+			</CurrencyTable>
+		</div>
+	</div>
 </template>
-
 <style scoped>
-
+.container {
+	display: flex;
+	justify-content: space-between;
+}
+.section {
+	border: 3px solid black;
+	padding: 10px;
+	flex: 1;
+	margin-right: 10px;
+}
+/* .section:first-child {
+	flex: 0 0 35%;
+}*/
+.section:last-child {
+	margin-right: 0;
+} 
 </style>
