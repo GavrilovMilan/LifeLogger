@@ -1,13 +1,18 @@
 <script setup>
-    import {ref, onMounted, computed} from 'vue';
+    import {ref, computed, onMounted} from 'vue';
     import CurrencyRow from './CurrencyRow.vue';
     import axios from 'axios';
+    import { onBeforeRouteUpdate } from 'vue-router';
 
     let currencies = ref([])
     let currencyFilter = ref('')
     let chosenId = ref(null)
 
     onMounted(() => {
+        getCurrencies()
+    })
+
+    onBeforeRouteUpdate(() => {
         getCurrencies()
     })
 
